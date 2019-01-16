@@ -18,12 +18,16 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showMessagePressed(_ sender: UIButton) {
-        if messageLabel.text == "You Are Awesome!"{
-            messageLabel.text = "You Are Great!"
-        } else if messageLabel.text == "You Are Great!" {
-            messageLabel.text = "You Are Amazing!"
+        let msg1 = "You Are Awesome!"
+        let msg2 = "You Are Great!"
+        let msg3 = "You Are Amazing!"
+        
+        if messageLabel.text == msg1 {
+            messageLabel.text = msg2
+        } else if messageLabel.text == msg2 {
+            messageLabel.text = msg3
         } else {
-            messageLabel.text = "You Are Awesome!"
+            messageLabel.text = msg1
         }
     }
     
