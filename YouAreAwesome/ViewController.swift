@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var index = 0
     @IBOutlet weak var messageLabel: UILabel!
     
     // Code below executed on the viewDidLoad event
@@ -18,17 +19,39 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showMessagePressed(_ sender: UIButton) {
-        let msg1 = "You Are Awesome!"
-        let msg2 = "You Are Great!"
-        let msg3 = "You Are Amazing!"
+
+        let messages = ["You Are Awesome!",
+                        "You Are Great!",
+                        "You Are Fantastic!",
+                        "When the Genius Bar need help, they call you!",
+                        "You brighten my day!",
+                        "You are da bomb!",
+                        "Hey, fabulous!",
+                        "You are tremendous!",
+                        "You've got the design skills of Jony Ive!",
+                        "I can't wait to download your app!"]
         
-        if messageLabel.text == msg1 {
-            messageLabel.text = msg2
-        } else if messageLabel.text == msg2 {
-            messageLabel.text = msg3
+        messageLabel.text = messages[index]
+        
+        if (index == messages.count-1) {
+            index = 0
         } else {
-            messageLabel.text = msg1
+            index += 1
         }
+        
+        
+//        let msg1 = "You Are Awesome!!!"
+//        let msg2 = "You Are Great!"
+//        let msg3 = "You Are Amazing!"
+//
+//        if messageLabel.text == msg1 {
+//            messageLabel.text = msg2
+//        } else if messageLabel.text == msg2 {
+//            messageLabel.text = msg3
+//        } else {
+//            messageLabel.text = msg1
+//        }
+        
     }
     
 }
