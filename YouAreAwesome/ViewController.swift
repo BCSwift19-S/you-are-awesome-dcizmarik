@@ -25,13 +25,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    func playSound(soundName: String) {
+    func playSound(soundName: String, audioPlayer: inout AVAudioPlayer) {
         // Play a sound
         var soundName = "sound\(soundIndex)"
         if let sound = NSDataAsset(name: soundName) {
             do {
-                try awesomePlayer = AVAudioPlayer(data: sound.data)
-                awesomePlayer.play()
+                try audioPlayer = AVAudioPlayer(data: sound.data)
+                audioPlayer.play()
             } catch {
                 print("Error: Data in \(soundName) couldn't be played as a sound properly.")
             }
@@ -75,7 +75,7 @@ class ViewController: UIViewController {
         // Choose a sound
         soundIndex = nonRepeatingRandom(lastNumber: soundIndex, maxValue: numSounds)
         let soundName = "sound\(soundIndex)"
-        playSound(soundName: soundName)
+        playSound(soundName: soundName, audioPlayer: &awesomePlayer)
         
     }
     
